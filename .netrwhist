@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/reinh/code/puppetlabs/puppet'
-let g:netrw_dirhist_2='/Users/reinh/code/puppetlabs'
-let g:netrw_dirhist_3='/Users/reinh/code'
-let g:netrw_dirhist_4='/Users/reinh'
-let g:netrw_dirhist_5='/Users/reinh/code/puppetlabs/puppet'
