@@ -43,3 +43,6 @@
 [submodule "bundle/vim-gist"]
 	path = bundle/vim-gist
 	url = git://github.com/mattn/gist-vim.git
+[submodule "bundle/vim-abolish"]
+	path = bundle/vim-abolish
+	url = git://github.com/tpope/vim-abolish.git
