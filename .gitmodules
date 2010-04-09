@@ -28,9 +28,6 @@
 [submodule "bundle/vim-supertab"]
 	path = bundle/vim-supertab
 	url = git://github.com/tsaleh/vim-supertab.git
-[submodule "bundle/vim-rubyredgreen"]
-	path = bundle/vim-rubyredgreen
-	url = git://github.com/reinh/vim-rubyredgreen.git
 [submodule "bundle/vim-tabular"]
 	path = bundle/vim-tabular
 	url = git://github.com/godlygeek/tabular.git
