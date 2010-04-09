@@ -34,3 +34,6 @@
 [submodule "bundle/vim-makegreen"]
 	path = bundle/vim-makegreen
 	url = git://github.com/reinh/vim-makegreen.git
+[submodule "bundle/vim-ragtag"]
+	path = bundle/vim-ragtag
+	url = git://github.com/tpope/vim-ragtag.git
