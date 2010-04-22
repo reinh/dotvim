@@ -46,3 +46,6 @@
 [submodule "bundle/vim-abolish"]
 	path = bundle/vim-abolish
 	url = git://github.com/tpope/vim-abolish.git
+[submodule "bundle/vim-css/syntax"]
+	path = bundle/vim-css/syntax
+	url = git://github.com/xenoterracide/css.vim.git
