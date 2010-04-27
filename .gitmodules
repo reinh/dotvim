@@ -49,3 +49,6 @@
 [submodule "bundle/vim-css/syntax"]
 	path = bundle/vim-css/syntax
 	url = git://github.com/xenoterracide/css.vim.git
+[submodule "bundle/vim-nerdcommenter"]
+	path = bundle/vim-nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
