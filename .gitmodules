@@ -52,3 +52,15 @@
 [submodule "bundle/vim-nerdcommenter"]
 	path = bundle/vim-nerdcommenter
 	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = http://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/vim-github-theme/colors"]
+	path = bundle/vim-github-theme/colors
+	url = http://github.com/nono/github_vim_theme.git
+[submodule "bundle/vim-scss-syntax"]
+	path = bundle/vim-scss-syntax
+	url = http://github.com/cakebaker/scss-syntax.vim.git
+[submodule "bundle/vim-rake"]
+	path = bundle/vim-rake
+	url = git://github.com/tpope/vim-rake.git
