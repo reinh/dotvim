@@ -57,7 +57,7 @@
 	url = http://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/vim-github-theme/colors"]
 	path = bundle/vim-github-theme/colors
-	url = http://github.com/nono/github_vim_theme.git
+	url = http://github.com/reinh/github_vim_theme.git
 [submodule "bundle/vim-scss-syntax"]
 	path = bundle/vim-scss-syntax
 	url = http://github.com/cakebaker/scss-syntax.vim.git
