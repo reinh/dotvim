@@ -91,66 +91,6 @@ cabbr <expr> %% expand('%:p:h')
 
 " Status Line {{{
 
-function! GitStatus()
-  if exists('*fugitive#statusline')
-    let branchname = fugitive#statusline()
-    let br_length = strlen(branchname)
-
-    if br_length > 0
-      let stripped_branchname = strpart(branchname, 5, br_length - 7)
-      let git = ' ± ' . stripped_branchname . ' '
-    else
-      let git = ''
-    end
-  else
-    let git = ''
-  endif
-  return git
-endfunction
-
-function! SyntaxStatus()
-  if exists('*SyntasticStatuslineFlag')
-    let toReturn = SyntasticStatuslineFlag()
-    let toReturn = substitute(toReturn, '[\[\]]', ' ', 'g')
-    if strlen(toReturn) > 0
-      return " ".toReturn
-    else
-      return ''
-    end
-  else
-    return ''
-  end
-endfunction
-
-let rails_statusline = 0
-
-let stl = "%<"
-
-let stl .= "%#DiffChange#"
-let stl .= " %-.60f "
-
-let stl .= "%#DiffAdd#"
-let stl .= " %{&filetype} "
-
-let stl .= "%#PmenuSbar#"
-let stl .= "%-.35{GitStatus()}"
-let stl .= "%*"
-
-let stl .= "%="
-
-let stl .= "%#ErrorMsg#"
-let stl .= "%{&modified > 0 ? '  Dirty ' : ''}"
-let stl .= "%{&modified == 1 && &modifiable == 0 ? ' ' : ''}"
-let stl .= "%{&modifiable == 0 ? 'readonly' : ''}"
-
-let stl .= "%{SyntaxStatus()}"
-let stl .= "%*"
-
-let stl .= "%#Pmenu#"
-let stl .= " %c:%l/%L "
-
-set statusline=%!stl
-
 " }}}
 
 " Plugin Settings {{{
@@ -160,6 +100,10 @@ set statusline=%!stl
 " Enable 'wide conceals' for type colons and function arrows
 let g:haskell_conceal_wide = 1
 
+" }}}
+
+" powerline {{{
+let g:Powerline_symbols = 'fancy'
 " }}}
 
 " }}}
