@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/Rein/code/ls/d/merchant_platform/engines/events/app/assets/lib/events'
+let g:netrw_dirhist_2='/Users/Rein/code/ls/d/merchant_platform/engines/events/app/assets/lib/events/views'
+let g:netrw_dirhist_3='/Users/Rein/code/ls/d/merchant_platform/engines/events/app/assets/lib/events'
+let g:netrw_dirhist_4='/Users/Rein/code/ls/d/merchant_platform/engines/events/app/assets/lib/events/stylesheets'
+let g:netrw_dirhist_5='/Users/Rein/code/ls/d/merchant_platform'
+let g:netrw_dirhist_6='/Users/Rein/code/ls/d/reservations'
+let g:netrw_dirhist_7='/Users/Rein'
