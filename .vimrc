@@ -12,24 +12,44 @@ filetype plugin indent on " Enable filetype detection, ftplugin, and indent
 
 set sw=2 ts=2 sts=2       " Two space indent is a good default
 set expandtab smarttab    " Handle tabs correctly
+set autoindent            " Copy indent to new line by default
 
-set autoindent            " Copy indent by default
-set visualbell            " Get rid of audio bell
+set cmdheight=1           " Set command line height to 1 line
+set grepprg=ack           " Use Ack instead of grep
+set incsearch             " Incremental search
+set laststatus=2          " Always show status line
+set list                  " Show tabs and trailing spaces
 set ml mls=5              " Force evaluation of modelines
 set number                " Show line numbers
-set incsearch             " Incremental search
-set showmatch             " Show matching braces
-set undofile              " Keep undo history in a file
-set undodir=~/.vim/tmp    " where to put undo files
-set laststatus=2          " Always show status line
-
-set grepprg=ack           " Use Ack instead of grep
-set virtualedit=block     " Allow virtual editing in visual block mode
 set scrolloff=3           " Always show three lines above/below cursor
-set cmdheight=1           " Set command line height to 1 line
-set list                  " Show tabs and trailing spaces
-
+set showmatch             " Show matching braces
 set splitbelow splitright " Create split windows in more intuitive places
+set undodir=~/.vim/tmp    " where to put undo files
+set undofile              " Keep undo history in a file
+set virtualedit=block     " Allow virtual editing in visual block mode
+set visualbell            " Get rid of audio bell
+
+" Completion options {{{
+" Insert longest common text, always show menu
+set completeopt=longest,menuone
+
+" Make <Enter> do the right thing
+inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+
+" open omni completion menu closing previous if open and opening new menu without changing the text
+inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
+            \ '<C-x><C-o><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
+" open user completion menu closing previous if open and opening new menu without changing the text
+inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
+            \ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
+" }}}
+
+" Wildmenu options {{{
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.sass-cache/*,tmp/*,.sass-cache/*
+set wildmenu
+set wildmode=longest:full,full " complete longest and open wildmenu, then cycle through full completions
+" }}}
 
 " Show tabs and trailing spaces using UTF characters where available
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
@@ -42,7 +62,7 @@ endif
 " Filetype Options {{{
 augroup FileTypeOptions
   autocmd!
-  autocmd FileType vim setlocal fdm=marker keywordprg=:help
+  autocmd FileType vim     setlocal fdm=marker keywordprg=:help
   autocmd FileType haskell setlocal fdl=99 " Open all folds by default
 augroup END
 " }}}
