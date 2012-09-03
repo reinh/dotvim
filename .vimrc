@@ -33,18 +33,6 @@ set visualbell            " Get rid of audio bell
 " Insert longest common text, always show menu
 set completeopt=longest,menuone
 
-" Make <Enter> do the right thing
-inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-
-" open omni completion menu closing previous if open and opening new menu without changing the text
-inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
-            \ '<C-x><C-o><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
-" open user completion menu closing previous if open and opening new menu without changing the text
-inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
-            \ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
-" }}}
-
 " Wildmenu options {{{
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.sass-cache/*,tmp/*,.sass-cache/*
 set wildmenu
@@ -57,6 +45,7 @@ if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
 else
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<
 endif
+"}}}
 "}}}
 
 " Filetype Options {{{
