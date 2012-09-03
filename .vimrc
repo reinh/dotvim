@@ -19,6 +19,7 @@ set number     " Show line numbers
 set incsearch  " Incremental search
 set showmatch  " Show matching braces
 set undofile   " Keep undo history in a file
+set undodir=~/.vim/tmp         " where to put undo files
 
 set grepprg=ack " Use Ack instead of grep
 set virtualedit=block " Allow virtual editing in visual block mode
