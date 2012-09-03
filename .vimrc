@@ -41,6 +41,7 @@ endif
 augroup FileTypeOptions
   autocmd!
   autocmd FileType vim setlocal fdm=marker keywordprg=:help
+  autocmd FileType haskell setlocal fdl=99 " Open all folds by default
 augroup END
 " }}}
 
@@ -147,5 +148,16 @@ let stl .= "%#Pmenu#"
 let stl .= " %c:%l/%L "
 
 set statusline=%!stl
+
+" }}}
+
+" Plugin Settings {{{
+
+" vim2hs {{{
+
+" Enable 'wide conceals' for type colons and function arrows
+let g:haskell_conceal_wide = 1
+
+" }}}
 
 " }}}
