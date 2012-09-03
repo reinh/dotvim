@@ -6,26 +6,28 @@ call pathogen#infect()
 set background=dark
 colorscheme reinh
 
-set nocompatible " This is Vim, not Vi!
-syntax on " Enable syntax highlighting
+set nocompatible          " This is Vim, not Vi!
+syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype detection, ftplugin, and indent
 
-set sw=2 ts=2 sts=2 expandtab smarttab " Two space indent is a good default
+set sw=2 ts=2 sts=2       " Two space indent is a good default
+set expandtab smarttab    " Handle tabs correctly
 
-set autoindent " Copy indent by default
-set visualbell " Get rid of audio bell
-set ml mls=5   " Force evaluation of modelines
-set number     " Show line numbers
-set incsearch  " Incremental search
-set showmatch  " Show matching braces
-set undofile   " Keep undo history in a file
-set undodir=~/.vim/tmp         " where to put undo files
+set autoindent            " Copy indent by default
+set visualbell            " Get rid of audio bell
+set ml mls=5              " Force evaluation of modelines
+set number                " Show line numbers
+set incsearch             " Incremental search
+set showmatch             " Show matching braces
+set undofile              " Keep undo history in a file
+set undodir=~/.vim/tmp    " where to put undo files
+set laststatus=2          " Always show status line
 
-set grepprg=ack " Use Ack instead of grep
-set virtualedit=block " Allow virtual editing in visual block mode
-set scrolloff=3 " Always show three lines above/below cursor
-set cmdheight=1 " Set command line height to 1 line
-set list        " Show tabs and trailing spaces
+set grepprg=ack           " Use Ack instead of grep
+set virtualedit=block     " Allow virtual editing in visual block mode
+set scrolloff=3           " Always show three lines above/below cursor
+set cmdheight=1           " Set command line height to 1 line
+set list                  " Show tabs and trailing spaces
 
 set splitbelow splitright " Create split windows in more intuitive places
 
