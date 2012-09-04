@@ -32,6 +32,7 @@ set visualbell            " Get rid of audio bell
 " Completion options {{{
 " Insert longest common text, always show menu
 set completeopt=longest,menuone
+"}}}
 
 " Wildmenu options {{{
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.sass-cache/*,tmp/*,.sass-cache/*
@@ -45,7 +46,6 @@ if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
 else
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<
 endif
-"}}}
 "}}}
 
 " Filetype Options {{{
@@ -95,10 +95,6 @@ au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
 " http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
 cabbr <expr> %% expand('%:p:h')
-
-" }}}
-
-" Status Line {{{
 
 " }}}
 
