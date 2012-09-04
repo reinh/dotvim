@@ -67,3 +67,6 @@
 [submodule "bundle/haskellmode-vim"]
 	path = bundle/haskellmode-vim
 	url = https://github.com/lukerandall/haskellmode-vim.git
+[submodule "bundle/dwm.vim"]
+	path = bundle/dwm.vim
+	url = https://github.com/spolu/dwm.vim.git
