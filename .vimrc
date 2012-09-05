@@ -6,7 +6,7 @@
 
 " Environment {
   " Basics
-  set nocompatible          " This is Vim, not Vi! (Most be first line)
+  set nocompatible          " This is Vim, not Vi! (Must be first line)
   set background=dark       " Assume a dark background
   colorscheme reinh         " Load my Tomorrow-Night-Bright variant
 
