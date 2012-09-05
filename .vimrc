@@ -1,5 +1,5 @@
 " ModeLine and Notes {
-" vim: set foldmarker={,} foldlevel=0 foldmethod=marker spell:
+" vim: foldmarker={,} foldlevel=0 foldmethod=marker
 "
 " This is the personal .vimrc file of Rein Henrichs.
 " }
