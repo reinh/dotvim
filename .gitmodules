@@ -76,3 +76,6 @@
 [submodule "bundle/mustache.vim"]
 	path = bundle/mustache.vim
 	url = git://github.com/juvenn/mustache.vim.git
+[submodule "bundle/vim-matchit"]
+	path = bundle/vim-matchit
+	url = git://github.com/edsono/vim-matchit.git
