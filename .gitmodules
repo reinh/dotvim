@@ -82,3 +82,6 @@
 [submodule "bundle/vim-ruby-minitest"]
 	path = bundle/vim-ruby-minitest
 	url = git://github.com/sunaku/vim-ruby-minitest.git
+[submodule "bundle/vim-indent-object"]
+	path = bundle/vim-indent-object
+	url = https://github.com/michaeljsmith/vim-indent-object.git
