@@ -106,3 +106,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-textobj-rubyblock"]
+	path = bundle/vim-textobj-rubyblock
+	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
