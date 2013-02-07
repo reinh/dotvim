@@ -90,7 +90,7 @@
 	url = https://github.com/jceb/vim-orgmode.git
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
-	url = https://github.com/bbommarito/vim-slim.git
+	url = git://github.com/slim-template/vim-slim.git
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
 	url = git://github.com/digitaltoad/vim-jade.git
