@@ -1,10 +1,6 @@
-if has("gui_running")
-    if has("mac")
-        silent! set nomacatsui anti enc=utf-8 termencoding=macroman gfn=Monaco:h13
-    else
-        set lazyredraw
-    end
-
-    set guioptions=ecgmrt
-    set fuopt=maxhorz,maxvert
-endif
+set guifont=Source\ Code\ Pro\ Light\ for\ Powerline:h24            " Font family and font size.
+set antialias                     " MacVim: smooth fonts.
+set encoding=utf-8                " Use UTF-8 everywhere.
+set guioptions=ecgmt
+set fuopt=maxhorz,maxvert
+set termencoding=macroman

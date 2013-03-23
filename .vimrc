@@ -7,14 +7,14 @@
 " Environment {
   " Basics
   set nocompatible          " This is Vim, not Vi! (Must be first line)
-  set background=dark       " Assume a dark background
-  colorscheme reinh         " Load my Tomorrow-Night-Bright variant
+  call pathogen#infect()    " Set up pathogen
+
+  " Color scheme
+  set background=light      " Assume a light background
+  colorscheme reinh-light      " Load color scheme
 
   syntax on                 " Enable syntax highlighting
   filetype plugin indent on " Enable filetype detection, ftplugin, and indent
-
-  " Set up pathogen
-  call pathogen#infect()
 
 " }
 
@@ -24,6 +24,9 @@
     set ml mls=5              " Force evaluation of modelines
     set undodir=~/.vim/tmp    " where to put undo files
     set undofile              " Keep undo history in a file
+    set mouse=a               " MOUSE ALL THE THINGS
+    set directory=/tmp        " put .swp files in /tmp because fuck those things
+    set tags+=tmp/tags,../tags,../../tags,../../../tags,../../../../tags,gems.tags
   " }
 
   " UI {
@@ -31,7 +34,7 @@
     set expandtab smarttab    " Handle tabs correctly
     set autoindent            " Copy indent to new line by default
     set cmdheight=1           " Set command line height to 1 line
-    set grepprg=ack           " Use Ack instead of grep
+    set grepprg=ag            " Use Ag (`brew install the_silver_searcher`) instead of grep
     set incsearch             " Incremental search
     set laststatus=2          " Always show status line
     set list                  " Show tabs and trailing spaces
@@ -42,6 +45,7 @@
     set virtualedit=block     " Allow virtual editing in visual block mode
     set visualbell            " Get rid of audio bell
     set foldenable            " Enable folds
+    set noshowmode            " Don't show mode since this is handled by powerline.
   " }
 
   " Tabs & Trailing Spaces {
@@ -59,7 +63,7 @@
   "}
 
   " Wildmenu options {
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.sass-cache/*,tmp/*,.sass-cache/*
+    set wildignore+=*.so,*.swp,*.zip,*/.sass-cache/*
     set wildmenu
     set wildmode=longest:full,full " complete longest and open wildmenu, then cycle through full completions
   " }
@@ -70,6 +74,9 @@
     autocmd!
     autocmd FileType vim     setlocal fdm=marker keywordprg=:help
     autocmd FileType haskell setlocal fdl=99 " Open all folds by default
+    autocmd FileType ruby    compiler rspec " User rspec for ruby files by default
+
+    autocmd BufEnter *_test.rb setlocal completefunc=syntaxcomplete#Complete " minitest
   augroup END
 " }
 
@@ -100,6 +107,15 @@
 
   " Reload .vimrc and .gvimrc
   command! Reload source ~/.vimrc | source ~/.gvimrc
+
+  " Show syntax highlighting groups for word under cursor
+  command ShowSyntax :call <SID>SynStack()<CR>
+  function! <SID>SynStack()
+    if !exists("*synstack")
+      return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunc
 " }
 
 " Abbreviations {
@@ -112,6 +128,9 @@
   hi link ExtraWhitespace Error
   au BufNewFile,BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
 
+  command ShowWhitespace hi link ExtraWhitespace Error  
+  command HideWhitespace hi link ExtraWhitespace NONE
+
   " except the line I am typing on
   au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 " }
@@ -123,12 +142,27 @@
   " }
 
   " powerline {
-    let g:Powerline_symbols = 'fancy'
+    let g:Powerline_loaded = 1
+    " let g:Powerline_symbols = 'fancy'
+    " let g:Powerline_colorscheme = 'reinh'
+  " }
+
+  " beta powerline {
+    python from powerline.bindings.vim import source_plugin; source_plugin()
   " }
 
   " haskellmode {
     " Configure browser for haskell_doc.vim
     let g:haddock_browser = "open"
     let g:haddock_browser_callformat = "%s %s"
+  " }
+
+  " rails.vim {
+    " See ~/.vim/macros/rails.vim
+  " }
+
+  " makegreen {
+    let g:makegreen_stay_on_file = 1
+    nmap <Leader>t :MakeGreen<CR>
   " }
 " }
