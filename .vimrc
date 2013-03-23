@@ -5,20 +5,22 @@
 " }
 
 " Environment {
-  " Basics
   set nocompatible          " This is Vim, not Vi! (Must be first line)
-  call pathogen#infect()    " Set up pathogen
+" }
 
+" Vundle Setup {
+  source bundles.vim
+" }
+
+" Settings {
   " Color scheme
   set background=light      " Assume a light background
   colorscheme reinh-light      " Load color scheme
 
+  " Syntax and filetype settings
   syntax on                 " Enable syntax highlighting
   filetype plugin indent on " Enable filetype detection, ftplugin, and indent
 
-" }
-
-" Settings {
   " General {
     set backspace=indent,eol,start
     set ml mls=5              " Force evaluation of modelines
@@ -128,7 +130,7 @@
   hi link ExtraWhitespace Error
   au BufNewFile,BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
 
-  command ShowWhitespace hi link ExtraWhitespace Error  
+  command ShowWhitespace hi link ExtraWhitespace Error
   command HideWhitespace hi link ExtraWhitespace NONE
 
   " except the line I am typing on

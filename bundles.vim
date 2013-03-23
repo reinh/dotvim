@@ -1,0 +1,50 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Shougo/vimproc'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'dag/vim2hs'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'edsono/vim-matchit'
+Bundle 'godlygeek/tabular'
+Bundle 'jceb/vim-orgmode'
+Bundle 'juvenn/mustache.vim'
+Bundle 'kana/vim-textobj-indent'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'lukerandall/haskellmode-vim'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'nono/vim-handlebars'
+Bundle 'reinh/vim-makegreen'
+Bundle 'scrooloose/syntastic'
+Bundle 'slim-template/vim-slim'
+Bundle 'spolu/dwm.vim'
+Bundle 'sunaku/vim-ruby-minitest'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-rvm'
+Bundle 'tpope/vim-surround'
+Bundle 'ujihisa/neco-ghc'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'wavded/vim-stylus'
+
+filetype plugin indent on     " required!
