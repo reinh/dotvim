@@ -9,7 +9,7 @@
 " }
 
 " Vundle Setup {
-  source bundles.vim
+  source ~/.vim/bundles.vim
 " }
 
 " Settings {
